@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="cs">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="all,follow">
+    <meta name="author" content="Viktor Michálek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="home" href="http://www.viki11.xf.cz/">
+    <link rel="shortcut icon" href="http://www.viki11.xf.cz/favicon.ico"> -->
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+    <link rel="bookmark" title="vimův blog" href="http://www.viki11.xf.cz/">
+    <title>vimův blog</title>
+  </head>
+  <body>
+    <div id="obrazovka">
+      <div id="okno">
+        <div id="hlavicka">
+          <!-- Sekce pro logo a menu -->
+          <a href="http://viki11.xf.cz/next/index.php"><img src="{% static 'blog/logo.png' %}" alt="Logo"></a>
+          <nav id="nav">
+            <ul>
+              <li id="active"><a href="http://viki11.xf.cz/next/index3.php?sekce=0">Blog</a></li>
+              <li><a href="http://viki11.xf.cz/next/index3.php?sekce=1">O mě</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div id="zakladni">
+          <div id="pravy">
+            <div class="boxik">
+              <fieldset><legend>Rubriky</legend>
+                <div class="prave_menu">
+                  <ul>
+                    <li><a href="http://viki11.xf.cz/next/index3.php?sekce=1&amp;rubrika=3">Hardware</a></li>
+                    <li><a href="http://viki11.xf.cz/next/index3.php?sekce=1&amp;rubrika=5">Mobilní telefony</a></li>
+                    <li><a href="http://viki11.xf.cz/next/index3.php?sekce=1&amp;rubrika=2">Operační systémy</a></li>
+                    <li><a href="http://viki11.xf.cz/next/index3.php?sekce=1&amp;rubrika=1">Ostatní</a></li>
+                    <li><a href="http://viki11.xf.cz/next/index3.php?sekce=1&amp;rubrika=4">Software</a></li>
+                  </ul>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+          <div id="stredni">
+            <div class="boxik">
+              {% block content %}
+              <!-- Content Goes here -->
+              {% endblock content %}
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="patka">
+          <div class="boxik">
+            <p class="copyr">
+              2022 vim
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

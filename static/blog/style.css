@@ -1,0 +1,283 @@
+/* Copyright (c)2005-2007,2022 Viktor Michalek, 3-col layout via CSS Copyright (c)2003 Petr Stanicek */
+body {
+  font-family:sans-serif, verdana;
+  background:#E0E0E0;
+  background-image: url("background.png");
+  color: #202020;
+}
+a:link {
+  color:#0088FF;
+  text-decoration:none;
+}
+a:visited {
+  color:#0088FF;
+  text-decoration:none;
+}
+a:active {
+  color:lime;
+  text-decoration:none;
+}
+a:hover {
+  color:#FF8800;
+  text-decoration:underline;
+}
+a img {
+  border:0px none;
+}
+hr {
+  height:1px;
+  border-style:dashed none none none;
+  border-color:rgb(128,208,255);
+}
+
+h1,h2,h3,h4	{font-family: sans-serif, verdana; color:#202020;}
+h1				{font-size:32pt;}             
+h2				{font-size:24pt;}
+h3				{font-size:16pt;}
+h4        {font-size:12pt;}
+fieldset  {border:1px #00B0FF dashed; border-radius: 5px; text-align:center; vertical-align:middle;}
+.zvirazni	{color:#00AAFF; font-weight:bold;}
+.zviraz		{color:red; font-weight:bold;}
+.copyr		{color:gray; font-size:8pt; text-align:center;}
+.vpravo     {text-align: right;}
+
+.clanek {
+  border-radius: 5px;
+  border:1px #80D0FF solid;
+  box-shadow:1px 1px 5px 2px gray;
+}
+.clanek:hover {
+  box-shadow:1px 1px 6px 3px gray;
+}
+.clanek .nazev {
+  font-size:11pt;
+  font-weight:bold;
+  line-height:21px;
+  /*background:#AAE0FF url(./sipka.gif) no-repeat 5px 50%;*/
+  background:#AAE0FF;
+  /*border:1px #00B0FF solid;*/
+  border-radius: 5px;
+  /*padding:0px 7px 0px 28px;*/
+  padding:0px 7px 0px 7px;
+  float:left;
+  color:#202020;
+  text-decoration:inherit;
+}
+.clanek .nazev a {
+  color:#202020;
+  text-decoration:inherit;
+  background:#AAE0FF;
+}
+.clanek .nazev a:hover {
+  text-decoration:underline;
+}
+.clanek .datum {
+  color:#202020;
+  font-size:11pt;
+  font-weight:normal;
+  line-height:21px;
+  background:#CFF0FF;
+  /*border:1px #00B0FF solid;*/
+  /*(first value applies to top-left corner, second value applies to top-right corner, third value applies to bottom-right corner, and fourth value applies to bottom-left corner)*/
+  border-radius: 5px 5px 0px 0px;
+  padding:0px 7px 0px 7px;
+  text-align:right;
+}
+.clanek .text {
+  vertical-align:top;
+  font-size:11pt;
+  font-weight:normal;
+  /*background:#000000;
+  border-left:1px #00B0FF solid;
+  border-right:1px #00B0FF solid;*/
+  padding:7px 7px 7px 7px;
+}
+.clanek .rubrika {
+  font-size:11pt;
+  font-weight:normal;
+  line-height:20px;
+  /*background:#0A0A1F;*/
+  background:#CFF0FF;
+  /*border:1px #00B0FF solid;*/
+  border-radius: 0px 0px 5px 5px;
+  padding:0px 7px 0px 7px;
+  float:left;
+}
+.clanek .autor {
+  font-size:11pt;
+  font-weight:normal;
+  line-height:20px;
+  /*background:#0A0A1F;*/
+  background:#CFF0FF;
+  /*border:1px #00B0FF solid;*/
+  border-radius: 0px 0px 5px 5px;
+  padding:0px 7px 0px 7px;
+  text-align:right;
+}
+.toolbar a img {
+  border: 0px none;
+  padding: 3px;
+}
+
+.toolbar a:hover img {
+  background: #C0CFFF;
+  border: 1px solid #6A9FFF;
+  padding: 2px;
+}
+.doprava {
+  text-align:right;
+}
+
+#obrazovka {
+  display: flex;
+  justify-content: center;
+}
+
+/* Definice ramcu v CSS */
+#okno {
+  width:960px;
+  margin:0; padding:0;
+  text-align:left;
+  border-radius: 5px;
+  /* border:1px #00A0FF solid; */
+}
+#hlavicka {
+  margin:0;
+  padding:0;
+  /* background:#000000; */
+  color: #0084FF;
+  text-align:center;
+}
+#zakladni {
+  margin:0;
+  /* padding: top right bottom left;*/
+  padding: 7px 0px 7px 0px;
+  /*background:#000000;*/
+  background: #FFFFFF;
+  border-radius: 5px;
+}
+#pravy {
+  float:right;
+  width:200px;
+  margin:0; padding:0;
+  /*background:#000000;*/
+  font-size:100%;
+  /*box-shadow:1px 1px 5px 2px gray;
+  border-radius: 5px*/
+}/*pravy sloupec*/
+#stredni {
+  margin:0 200px 0 0;
+  /*background:#000000;*/
+  font-size:100%;
+  border:1px rgb(128,208,255);
+  /*border-style:none solid none none;*/
+  border-radius: 5px
+}
+.boxik {
+  margin:0; padding:0.5em 1em;
+  /*border:1px; border-color:black;*/
+  border-radius: 5px;
+}
+.cleaner {
+  clear:both;
+  height:1px;
+  font-size:1px;
+  border:none;
+  margin:0; padding:0;
+  /*background:#000000;*/
+}
+.patka {
+  /*background:#000000;*/
+  border-radius: 25px;
+}
+.patka hr {
+  height:1px;
+  border-style:dotted none none none;
+  border-color:#00B0FF;
+}
+.logo {
+  text-align:center;
+  vertical-align:middle;
+  display:block;
+  border:0px none;
+  }
+.logo a {
+  color:#000000;
+  text-decoration:none;
+  border:0px #000000 none;
+}
+.invisible {
+  display:none;
+}
+/* KONEC definice ramcu*/
+/*Horni menu*/
+#nav {
+  width:100%;
+  float:left;
+  border-radius: 5px;
+  background-color:#1270DA;
+}
+#nav ul {
+  padding:0;
+}
+#nav ul li {
+  display:inline;
+}
+#nav ul {
+  margin:0;
+  padding:0 0 0 7%;
+  color:#FFFFFF;
+  font-family:tahoma, verdana, geneva, arial, helvetica, sans-serif;
+  font-size:.8em;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+#nav ul li a {
+  padding:0.2em 12px;
+  background-color:#1270DA;
+  color:#FFFFFF;
+  text-decoration:none;
+  float:left;
+  border-right:1px solid #128AC8;
+}
+#nav ul li a:hover {
+  background-color:#6699FF;/*#3296FF;*/
+  color:#FFFFFF;
+}
+#nav li#active a {
+  background-color:#00A0FF;
+  color:#FFFFFF;
+}
+/*Prave menu - rubriky.*/
+.prave_menu {
+  float:inherit;
+  background-color:#FFFFFF;
+}
+.prave_menu ul li {
+  display:block;
+}
+.prave_menu ul {
+  margin:0;
+  padding:0 0 0 7%;
+  color:#202020;
+  font-family:tahoma, verdana, geneva, arial, helvetica, sans-serif;
+  font-size:.8em;
+  letter-spacing:1px;
+  font-weight:bold;
+}
+.prave_menu ul li a {
+  background-color:#FFFFFF;
+  color:#202020;
+  text-decoration:none;
+  line-height:1.5em;
+}
+.prave_menu ul li a:hover {
+  background-color:#80D0FF;
+  color:#202020;
+}
+.prave_menu li#active a {
+  background-color:#00A0FF;
+  color:#202020;
+}
+/*Konec definice horniho menu.*/
+/*KONEC SOUBORU*/

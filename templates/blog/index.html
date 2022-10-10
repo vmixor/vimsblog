@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+{% block content %}
+  {% for post in post_list %}
+              <br>
+              <div class="clanek">
+                <div class="nazev"><a href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a></div>
+                <div class="datum">{{ post.publish }}</div>
+                <div class="text">{{post.content|safe|slice:":200" }}</div>
+                <div class="rubrika"><b>Rubrika:</b> {{ post.category }}</div>
+                <div class="autor"><b>Autor:</b> {{ post.author }}</div>
+              </div>
+  {% endfor %}
+              <!--<p class="vpravo"><a href="http://viki11.xf.cz/next/index3.php?sekce=1&amp;vypsanych=0">&lt; novější</a> | <a href="http://viki11.xf.cz/next/index3.php?sekce=1&amp;vypsanych=4">starší &gt;</a></p> -->
+{%endblock%}
