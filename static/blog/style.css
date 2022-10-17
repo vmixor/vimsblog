@@ -90,7 +90,11 @@ fieldset  {border:1px #00B0FF dashed; border-radius: 5px; text-align:center; ver
   /*background:#000000;
   border-left:1px #00B0FF solid;
   border-right:1px #00B0FF solid;*/
-  padding:7px 7px 7px 7px;
+  /*padding: top right bottom left */
+  padding: 0px 7px 0px 7px;
+}
+.clanek .text p {
+  margin: 4px 0px 4px 0px;
 }
 .clanek .rubrika {
   font-size:11pt;
@@ -248,6 +252,7 @@ fieldset  {border:1px #00B0FF dashed; border-radius: 5px; text-align:center; ver
   background-color:#00A0FF;
   color:#FFFFFF;
 }
+/*Konec definice horniho menu.*/
 /*Prave menu - rubriky.*/
 .prave_menu {
   float:inherit;
@@ -279,5 +284,4 @@ fieldset  {border:1px #00B0FF dashed; border-radius: 5px; text-align:center; ver
   background-color:#00A0FF;
   color:#202020;
 }
-/*Konec definice horniho menu.*/
 /*KONEC SOUBORU*/
