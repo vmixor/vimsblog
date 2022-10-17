@@ -17,11 +17,11 @@
       <div id="okno">
         <div id="hlavicka">
           <!-- Sekce pro logo a menu -->
-          <a href="http://viki11.xf.cz/next/index.php"><img src="{% static 'blog/logo.png' %}" alt="Logo"></a>
+          <a href="{% url 'home' %}"><img src="{% static 'blog/logo.png' %}" alt="Logo"></a>
           <nav id="nav">
             <ul>
-              <li id="active"><a href="http://viki11.xf.cz/next/index3.php?sekce=0">Blog</a></li>
-              <li><a href="http://viki11.xf.cz/next/index3.php?sekce=1">O mě</a></li>
+              <li{% if '/about/' not in request.path %} id="active"{% endif %}><a href="{% url 'home' %}">Blog</a></li>
+              <li{% if '/about/' in request.path %} id="active"{% endif %}><a href="{% url 'about' %}">O mě</a></li>
             </ul>
           </nav>
         </div>
