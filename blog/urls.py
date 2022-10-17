@@ -4,7 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    re_path('^/?$', views.PostList.as_view(), name='home'),
+    re_path('^$', views.PostList.as_view(), name='home'),
     # re_path('^category/(?P<hierarchy>.+)/$', views.show_category, name='category'),
     re_path('^category/(?P<hierarchy>.+)$', views.PostList.as_view(), name='category'),
     path('detail/<slug:slug>/', views.PostDetail.as_view(), name='post_detail'),
