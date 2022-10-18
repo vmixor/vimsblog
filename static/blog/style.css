@@ -6,19 +6,19 @@ body {
   color: #202020;
 }
 a:link {
-  color:#0088FF;
+  color:#202020;
   text-decoration:none;
 }
 a:visited {
-  color:#0088FF;
+  color:#202020;
   text-decoration:none;
 }
 a:active {
-  color:lime;
+  color:#0088FF;
   text-decoration:none;
 }
 a:hover {
-  color:#FF8800;
+  color:202020;
   text-decoration:underline;
 }
 a img {
