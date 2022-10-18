@@ -11,10 +11,10 @@ class PostList(generic.ListView):
     def get_queryset(self, **kwargs):
         qs = super().get_queryset(**kwargs)
         if 'hierarchy' in self.kwargs:
-            slu = self.kwargs['hierarchy'].split('/')
-            slug = slu[-1] if slu[-1] != '' else slu[-2]
-            category = Category.objects.filter(slug=slug).first()
-            return qs.filter(category=category)
+            slu = self.kwargs['hierarchy'].split('/')  # split category hierarchy url string into list
+            slug = slu[-1] if slu[-1] != '' else slu[-2]  # get last non-empty slug element
+            category = Category.objects.filter(slug=slug).first()  # get first() element from list
+            return qs.filter(category=category)  # filter Posts by category
         else:
             return qs
 
