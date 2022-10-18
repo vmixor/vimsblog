@@ -6,11 +6,11 @@ body {
   color: #202020;
 }
 a:link {
-  color:#202020;
+  color:#0088FF;
   text-decoration:none;
 }
 a:visited {
-  color:#202020;
+  color:#0088FF;
   text-decoration:none;
 }
 a:active {
@@ -27,7 +27,7 @@ a img {
 hr {
   height:1px;
   border-style:dashed none none none;
-  border-color:rgb(128,208,255);
+  border-color:#80D0FF;
 }
 
 h1,h2,h3,h4	{font-family: sans-serif, verdana; color:#202020;}
@@ -107,6 +107,9 @@ fieldset  {border:1px #00B0FF dashed; border-radius: 5px; text-align:center; ver
   padding:0px 7px 0px 7px;
   float:left;
 }
+.clanek .rubrika a {
+  color:#202020;
+}
 .clanek .autor {
   font-size:11pt;
   font-weight:normal;
@@ -173,7 +176,7 @@ fieldset  {border:1px #00B0FF dashed; border-radius: 5px; text-align:center; ver
   margin:0 200px 0 0;
   /*background:#000000;*/
   font-size:100%;
-  border:1px rgb(128,208,255);
+  border:1px #80D0FF;
   /*border-style:none solid none none;*/
   border-radius: 5px
 }
