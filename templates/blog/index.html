@@ -5,8 +5,10 @@
               <div class="clanek">
                 <div class="nazev"><a href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a></div>
                 <div class="datum">{{ post.publish }}</div>
-                <div class="text">{{post.content|safe|slice:":200" }}</div>
-                <div class="rubrika"><b>Rubrika:</b> {{ post.category }}</div>
+                <div class="text">
+                    {{post.content|safe|slice:":400" }}<a href="{% url 'post_detail' post.slug  %}">... více</a>
+                </div>
+                <div class="rubrika"><b>Rubrika:</b> <a href="{% url 'category' post.category.slug  %}">{{ post.category.name }}</a></div>
                 <div class="autor"><b>Autor:</b> {{ post.author }}</div>
               </div>
   {% endfor %}
