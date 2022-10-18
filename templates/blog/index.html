@@ -1,5 +1,8 @@
 {% extends "blog/base.html" %}
 {% block content %}
+{% if 'category' in request.path %}              <p>
+                <b>Výpis rubriky: </b>{{ post_list.0.category }}
+              </p>{% endif %}
   {% for post in post_list %}
               <br>
               <div class="clanek">
