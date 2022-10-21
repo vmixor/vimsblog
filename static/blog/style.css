@@ -1,9 +1,9 @@
-/* Copyright (c)2005-2007,2022 Viktor Michalek, 3-col layout via CSS Copyright (c)2003 Petr Stanicek */
+/* Copyright (c)2005-2007,2022 Viktor Michalek */
 body {
-  font-family:sans-serif, verdana;
+  font-family:tahoma, verdana, geneva, arial, helvetica, sans-serif;
   background:#E0E0E0;
   background-image: url("background.png");
-  color: #202020;
+  color:#202020;
 }
 a:link {
   color:#0088FF;
@@ -29,22 +29,36 @@ hr {
   border-style:dashed none none none;
   border-color:#80D0FF;
 }
-
-h1,h2,h3,h4	{font-family: sans-serif, verdana; color:#202020;}
-h1				{font-size:32pt;}             
-h2				{font-size:24pt;}
-h3				{font-size:16pt;}
-h4        {font-size:12pt;}
-fieldset  {border:1px #00B0FF dashed; border-radius: 5px; text-align:center; vertical-align:middle;}
-.zvirazni	{color:#00AAFF; font-weight:bold;}
-.zviraz		{color:red; font-weight:bold;}
-.copyr		{color:gray; font-size:8pt; text-align:center;}
-.vpravo     {text-align: right;}
-
+h1 {font-size:28pt;}
+h2 {font-size:24pt;}
+h3 {font-size:18pt;}
+h4 {font-size:14pt;}
+fieldset {
+  border:1px #80D0FF dashed;
+  border-radius: 5px;
+  text-align:center;
+  vertical-align:middle;
+}
+.copyr {
+  color:gray;
+  font-size:8pt;
+  text-align:center;
+}
+pre {
+  font-family: Consolas,"courier new";
+  background:#CFF0FF;
+  border-radius: 5px;
+  border: 1px #80D0FF solid;
+  padding: 4px;
+}
+pre code {
+  font-size: 105%;
+}
 .clanek {
   border-radius: 5px;
   border:1px #80D0FF solid;
   box-shadow:1px 1px 5px 2px gray;
+  font-family:tahoma, verdana, geneva, arial, helvetica, sans-serif;
 }
 .clanek:hover {
   box-shadow:1px 1px 6px 3px gray;
@@ -96,6 +110,9 @@ fieldset  {border:1px #00B0FF dashed; border-radius: 5px; text-align:center; ver
 .clanek .text p {
   margin: 4px 0px 4px 0px;
 }
+.clanek .text pre {
+  font-size: 80%;
+}
 .clanek .rubrika {
   font-size:11pt;
   font-weight:normal;
@@ -106,6 +123,7 @@ fieldset  {border:1px #00B0FF dashed; border-radius: 5px; text-align:center; ver
   border-radius: 0px 0px 5px 5px;
   padding:0px 7px 0px 7px;
   float:left;
+  font-family:tahoma, verdana, geneva, arial, helvetica, sans-serif;
 }
 .clanek .rubrika a {
   color:#202020;
@@ -120,26 +138,21 @@ fieldset  {border:1px #00B0FF dashed; border-radius: 5px; text-align:center; ver
   border-radius: 0px 0px 5px 5px;
   padding:0px 7px 0px 7px;
   text-align:right;
+  font-family:tahoma, verdana, geneva, arial, helvetica, sans-serif;
 }
 .toolbar a img {
   border: 0px none;
   padding: 3px;
 }
-
 .toolbar a:hover img {
   background: #C0CFFF;
   border: 1px solid #6A9FFF;
   padding: 2px;
 }
-.doprava {
-  text-align:right;
-}
-
 #obrazovka {
   display: flex;
   justify-content: center;
 }
-
 /* Definice ramcu v CSS */
 #okno {
   width:960px;
@@ -169,8 +182,6 @@ fieldset  {border:1px #00B0FF dashed; border-radius: 5px; text-align:center; ver
   margin:0; padding:0;
   /*background:#000000;*/
   font-size:100%;
-  /*box-shadow:1px 1px 5px 2px gray;
-  border-radius: 5px*/
 }/*pravy sloupec*/
 #stredni {
   margin:0 200px 0 0;
