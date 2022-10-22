@@ -18,10 +18,20 @@ class PostList(generic.ListView):
         else:
             return qs
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        return context
+
 
 class PostDetail(generic.DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        return context
 
 
 def show_category(request, hierarchy=None):
