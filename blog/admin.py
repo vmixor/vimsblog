@@ -1,8 +1,9 @@
 from django.contrib import admin
 from .models import Category, Tag, Post
+from mptt.admin import DraggableMPTTAdmin
 
 
-class CategoryAdmin(admin.ModelAdmin):
+class CategoryAdmin(DraggableMPTTAdmin):
     search_fields = ['name', 'description']
     prepopulated_fields = {'slug': ('name',)}
 
