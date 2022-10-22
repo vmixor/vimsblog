@@ -18,6 +18,7 @@ class PostList(generic.ListView):
         else:
             return qs
 
+    # Add categories records for category list (in base.html)
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
@@ -28,6 +29,7 @@ class PostDetail(generic.DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
 
+    # Add categories records for category list (in base.html)
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()

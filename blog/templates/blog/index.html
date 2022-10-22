@@ -11,7 +11,7 @@
                 <div class="text">
                     {{post.content|safe|slice:":400" }}<a href="{% url 'post_detail' post.slug  %}">... více</a>
                 </div>
-                <div class="rubrika"><b>Rubrika:</b> <a href="{{post.category.get_absolute_url}}">{{ post.category.name }}</a></div>
+                <div class="rubrika"><b>Rubrika:</b> <a href="{{ post.category.get_absolute_url }}">{{ post.category.name }}</a></div>
                 <div class="autor"><b>Autor:</b> {{ post.author }}</div>
               </div>
   {% endfor %}
