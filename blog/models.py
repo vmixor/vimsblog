@@ -12,7 +12,7 @@ class Category(MPTTModel):
     parent = TreeForeignKey('self', on_delete=models.SET_NULL, null=True, blank=True, related_name='children')
 
     class Meta:
-        verbose_name_plural = "categories"
+        verbose_name_plural = 'categories'
 
     def __str__(self):
         full_path = [self.name]
@@ -60,7 +60,7 @@ class Post(models.Model):
 
     def get_cat_list(self):
         k = self.category  # for now ignore this instance method
-        breadcrumb = ["dummy"]
+        breadcrumb = ['dummy']
         while k is not None:
             breadcrumb.append(k.slug)
             k = k.parent

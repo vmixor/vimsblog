@@ -15,7 +15,7 @@ class TagAdmin(admin.ModelAdmin):
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'slug', 'is_public', 'created', 'updated', 'publish')
-    list_filter = ("is_public",)
+    list_filter = ('is_public',)
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
 
