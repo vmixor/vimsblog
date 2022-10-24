@@ -57,13 +57,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-    def get_cat_list(self):
-        k = self.category  # for now ignore this instance method
-        breadcrumb = ['dummy']
-        while k is not None:
-            breadcrumb.append(k.slug)
-            k = k.parent
-        for i in range(len(breadcrumb)-1):
-            breadcrumb[i] = '/'.join(breadcrumb[-1:i-1:-1])
-        return breadcrumb[-1:0:-1]
