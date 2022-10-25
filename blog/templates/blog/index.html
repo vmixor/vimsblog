@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
 {% block content %}
 {% if 'category' in request.path %}              <p>
-                <b>Výpis rubriky: </b>{{ post_list.0.category }}
+                {% if post_list.0.category %}<b>Výpis rubriky: </b>{{ post_list.0.category }}{% else %}Rubrika je prázdná{% endif %}
               </p>{% endif %}
   {% for post in post_list %}
               <br>
