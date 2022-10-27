@@ -1,8 +1,10 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from tinymce.models import HTMLField
 from mptt.models import MPTTModel, TreeForeignKey
 from django.urls import reverse
+
+User = get_user_model()
 
 
 class Category(MPTTModel):
