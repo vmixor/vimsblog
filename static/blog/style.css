@@ -44,6 +44,17 @@ fieldset {
   font-size:8pt;
   text-align:center;
 }
+.strankovani {
+  text-align:right;
+  font-family:tahoma, verdana, geneva, arial, helvetica, sans-serif;
+  font-size:12pt;
+}
+.strankovani a {
+  color:#202020;
+}
+.strankovani a:hover {
+  text-decoration:underline;
+}
 pre {
   font-family: Consolas,"courier new";
   background:#CFF0FF;

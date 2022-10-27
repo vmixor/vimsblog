@@ -14,6 +14,9 @@
                 <div class="rubrika"><b>Rubrika:</b> <a href="{{ post.category.get_absolute_url }}">{{ post.category.name }}</a></div>
                 <div class="autor"><b>Autor:</b> {{ post.author }}</div>
               </div>
-  {% endfor %}
-              <!--<p class="vpravo"><a href="http://viki11.xf.cz/next/index3.php?sekce=1&amp;vypsanych=0">&lt; novější</a> | <a href="http://viki11.xf.cz/next/index3.php?sekce=1&amp;vypsanych=4">starší &gt;</a></p> -->
+  {% endfor %}{% if is_paginated %}
+              <p class="strankovani">
+                {% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}">&laquo; Novější příspěvky</a>{% endif %}
+                {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}"> Starší příspěvky &raquo;</a>{% endif %}
+              </p>{% endif %}
 {%endblock%}

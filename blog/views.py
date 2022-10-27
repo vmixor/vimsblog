@@ -7,6 +7,7 @@ from django.utils import timezone
 class PostList(generic.ListView):
     queryset = Post.objects.filter(is_public=True, publish__lte=timezone.now()).order_by('-publish')
     template_name = 'blog/index.html'
+    paginate_by = 5
 
     def get_queryset(self, **kwargs):
         qs = super().get_queryset(**kwargs)
