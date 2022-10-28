@@ -7,9 +7,9 @@
     <meta name="author" content="Viktor Michálek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--<link rel="home" href="http://www.viki11.xf.cz/">
-    <link rel="shortcut icon" href="http://www.viki11.xf.cz/favicon.ico"> -->
+    <link rel="bookmark" title="vimův blog" href="http://www.viki11.xf.cz/"> -->
+    <link rel="shortcut icon" href="{% static 'blog/favicon.ico' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
-    <link rel="bookmark" title="vimův blog" href="http://www.viki11.xf.cz/">
     <title>vimův blog</title>
   </head>
   <body>
@@ -52,7 +52,7 @@
         <div class="patka">
           <div class="boxik">
             <p class="copyr">
-              2022 vim
+              2022 - {% now 'Y' %} vim
             </p>
           </div>
         </div>
