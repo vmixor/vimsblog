@@ -21,7 +21,7 @@
           <nav id="nav">
             <ul>
               <li{% if '/about/' not in request.path %} id="active"{% endif %}><a href="{% url 'home' %}">Blog</a></li>
-              <li{% if '/about/' in request.path %} id="active"{% endif %}><a href="{% url 'about' %}">O mě</a></li>
+              <li{% if '/about/' in request.path %} id="active"{% endif %}><a href="{% url 'about' %}">O mně</a></li>
             </ul>
           </nav>
         </div>
