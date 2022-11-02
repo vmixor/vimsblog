@@ -35,3 +35,13 @@ class PostDetail(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context['categories'] = Category.objects.all()
         return context
+
+
+class About(generic.TemplateView):
+    template_name = 'blog/about.html'
+
+    # Add categories records for category list (in base.html)
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Category.objects.all()
+        return context
