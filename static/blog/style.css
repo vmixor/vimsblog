@@ -44,6 +44,11 @@ fieldset {
   font-size:8pt;
   text-align:center;
 }
+.form-control {
+}
+.is-invalid {
+  box-shadow:1px 1px 5px 2px red;
+}
 .strankovani {
   text-align:right;
   font-family:tahoma, verdana, geneva, arial, helvetica, sans-serif;
