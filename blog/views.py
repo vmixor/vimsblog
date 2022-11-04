@@ -46,6 +46,35 @@ class PostDetail(generic.DetailView):
         context['form'] = form
         return context
 
+    def post(self, request, *args, **kwargs):
+        form = CommentForm(request.POST)
+        self.object = self.get_object()
+        context = super().get_context_data(**kwargs)
+
+        post = Post.objects.filter(slug=self.kwargs['slug'])[0]
+        comments = post.comments.filter(public=True)
+        categories = Category.objects.all()  # get all categories
+
+        context['post'] = post
+        context['categories'] = categories
+        context['comments'] = comments
+        context['form'] = form
+
+        if form.is_valid() and post.add_comments:
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            content = form.cleaned_data['content']
+
+            comment = Comment.objects.create(
+                name=name, email=email, content=content, post=post
+            )
+
+            form = CommentForm()
+            context['form'] = form
+            return self.render_to_response(context=context)
+
+        return self.render_to_response(context=context)
+
 
 class About(generic.TemplateView):
     template_name = 'blog/about.html'
