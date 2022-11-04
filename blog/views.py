@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.views import generic
 from django.utils import timezone
 from .models import Post, Category, Comment
@@ -15,7 +15,7 @@ class PostList(generic.ListView):
         if 'hierarchy' in self.kwargs:
             slu = self.kwargs['hierarchy'].split('/')  # split category hierarchy url string into list
             slug = slu[-1] if slu[-1] != '' else slu[-2]  # get last non-empty slug element
-            category = Category.objects.filter(slug=slug).first()  # get first() element from list
+            category = Category.objects.filter(slug=slug)[0]  # get first() element from list
             return qs.filter(category=category)  # filter Posts by category
         else:
             return qs
@@ -31,7 +31,6 @@ class PostDetail(generic.DetailView):
     model = Post
     template_name = 'blog/post_detail.html'
 
-    # Add categories records for category list (in base.html)
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         slug = self.kwargs["slug"]

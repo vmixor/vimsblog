@@ -42,7 +42,7 @@ class Tag(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField('Title', max_length=128, unique=True)
+    title = models.CharField('Title', max_length=128, db_index=True, unique=True)
     description = models.TextField('Description')
     content = HTMLField()
     is_public = models.BooleanField('Is public', default=False)
