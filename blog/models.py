@@ -50,6 +50,7 @@ class Post(models.Model):
     created = models.DateTimeField('Creation date and time', auto_now_add=True)
     updated = models.DateTimeField('Last modification date and time', auto_now=True)
     publish = models.DateTimeField('Publication date and time', auto_now=False, auto_now_add=False)
+    add_comments = models.BooleanField('Add new comments', default=True)
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
     tag = models.ManyToManyField('Tag')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -59,3 +60,18 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Comment(models.Model):
+    name = models.CharField('Nick', max_length=32)
+    email = models.EmailField('E-mail', max_length=64)
+    content = models.TextField('Content')
+    public = models.BooleanField('Is public', default=False)
+    created = models.DateTimeField('Creation date and time', auto_now_add=True)
+    post = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='comments')
+
+    class Meta:
+        ordering = ['-created']
+
+    def __str__(self):
+        return self.name
