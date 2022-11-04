@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
-from .models import Post, Category
 from django.utils import timezone
+from .models import Post, Category, Comment
+from .forms import CommentForm
 
 
 class PostList(generic.ListView):
@@ -33,7 +34,16 @@ class PostDetail(generic.DetailView):
     # Add categories records for category list (in base.html)
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['categories'] = Category.objects.all()
+        slug = self.kwargs["slug"]
+
+        form = CommentForm()
+        post = get_object_or_404(Post, slug=slug)
+        categories = Category.objects.all()  # get all categories
+        comments = post.comments.filter(public=True)
+
+        context['categories'] = categories
+        context['comments'] = comments
+        context['form'] = form
         return context
 
 
