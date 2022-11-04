@@ -4,7 +4,6 @@
                 {% if post_list.0.category %}<b>Výpis rubriky: </b>{{ post_list.0.category }}{% else %}Rubrika je prázdná{% endif %}
               </p>{% endif %}
   {% for post in post_list %}
-              <br>
               <div class="clanek">
                 <div class="nazev"><a href="{% url 'post_detail' post.slug  %}">{{ post.title }}</a></div>
                 <div class="datum">{{ post.publish }}</div>

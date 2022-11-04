@@ -70,6 +70,8 @@ pre code {
   border:1px #80D0FF solid;
   box-shadow:1px 1px 5px 2px gray;
   font-family:tahoma, verdana, geneva, arial, helvetica, sans-serif;
+  /*margin: top right bottom left */
+  margin: 16px 0px 16px 0px;
 }
 .clanek:hover {
   box-shadow:1px 1px 6px 3px gray;
