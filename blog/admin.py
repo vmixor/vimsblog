@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Category, Tag, Post, Comment
 from mptt.admin import DraggableMPTTAdmin
+from .models import Category, Tag, Post, Comment
 
 
 class CategoryAdmin(DraggableMPTTAdmin):
