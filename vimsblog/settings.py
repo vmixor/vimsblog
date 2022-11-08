@@ -36,6 +36,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'filebrowser',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -164,3 +165,9 @@ TINYMCE_DEFAULT_CONFIG = {
     'custom_undo_redo_levels': 32,
     'entity_encoding': 'raw',
 }
+
+# X_FRAME_OPTIONS = 'SAMEORIGIN'  # Needed by Django FileBrowser (with Grappelli)
+# FILEBROWSER_SHOW_IN_DASHBOARD = True
+TINYMCE_FILEBROWSER = True
+FILEBROWSER_DIRECTORY = ''
+DIRECTORY = ''
