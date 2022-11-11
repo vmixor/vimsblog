@@ -10,12 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
-#import os
-
-## Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-#TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -24,11 +19,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'k9!%popsyjh!w+arf@-s)-j2&_0xqg56(_&l@h_7uz6y8v1o@*'
-
+IS_PRODUCTION = False
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = not IS_PRODUCTION
+
+# SECURITY WARNING: keep the secret key used in production secret!
+if IS_PRODUCTION:
+    try:
+        SECRET_KEY = os.environ['SECRET_KEY']
+        DB_HOST = os.environ['DB_HOST']
+        DB_PORT = os.environ['DB_PORT']
+        DB_NAME = os.environ['DB_NAME']
+        DB_USER = os.environ['DB_USER']
+        DB_PASSWORD = os.environ['DB_PASSWORD']
+    except KeyError as e:
+        raise RuntimeError("Could not find environment variable in environment") from e
+else:
+    SECRET_KEY = 'k9!%popsyjh!w+arf@-s)-j2&_0xqg56(_&l@h_7uz6y8v1o@*'
 
 ALLOWED_HOSTS = []
 
@@ -82,23 +89,24 @@ WSGI_APPLICATION = 'vimsblog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'NAME': BASE_DIR / 'db.sqlite3',
+if IS_PRODUCTION:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': DB_NAME,
+            'USER': DB_USER,
+            'PASSWORD': DB_PASSWORD,
+            'HOST': DB_HOST,
+            'PORT': DB_PORT,
+        }
     }
-}
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'vimsblog',
-#         'USER': 'vimsblog',
-#         'PASSWORD': 'uM46?Z&]MiuJkcW3Z^.I',
-#         'HOST': '127.0.0.1',
-#         'PORT': '5432',
-#     }
-# }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
 
 
 # Password validation
