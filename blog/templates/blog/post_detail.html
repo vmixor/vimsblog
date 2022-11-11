@@ -19,7 +19,7 @@
                     <input type="text" class="form-control {% if form.name.errors %}is-invalid{% endif %}" id="id_name"
                       name="name" value="{{ form.name.value|default:'' }}">
                   </label><br>
-                  <label>{{ form.email.label_tag }} <small>(Your email address will not be published)</small><br>
+                  <label>{{ form.email.label_tag }} <small>(Váš email zůstane skrytý)</small><br>
                     <input type="text" class="form-control {% if form.email.errors %}is-invalid{% endif %}" id="id_email"
                       name="email" value="{{ form.email.value|default:'' }}">
                   </label><br>
