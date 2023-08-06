@@ -1,1 +1,3 @@
 Rewrite CSS Layout to grid
+Hierarchical comments with django-mptt
+Replace django-simple-captcha with django-recaptcha
