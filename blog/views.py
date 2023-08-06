@@ -6,19 +6,20 @@ from .forms import CommentForm
 
 
 class PostList(generic.ListView):
-    queryset = Post.objects.filter(is_public=True, publish__lte=timezone.now()).order_by('-publish')
+    model = Post
     template_name = 'blog/index.html'
     paginate_by = 5
 
     def get_queryset(self, **kwargs):
         qs = super().get_queryset(**kwargs)
         if 'hierarchy' in self.kwargs:
+            # filter Posts by category
             slu = self.kwargs['hierarchy'].split('/')  # split category hierarchy url string into list
             slug = slu[-1] if slu[-1] != '' else slu[-2]  # get last non-empty slug element
             category = Category.objects.filter(slug=slug)[0]  # get first() element from list
-            return qs.filter(category=category)  # filter Posts by category
+            return qs.filter(category=category, is_public=True, publish__lte=timezone.now()).order_by('-publish')
         else:
-            return qs
+            return qs.filter(is_public=True, publish__lte=timezone.now()).order_by('-publish')
 
     # Add categories records for category list (in base.html)
     def get_context_data(self, **kwargs):
