@@ -27,8 +27,7 @@
                     <textarea class="form-control {% if form.content.errors %}is-invalid{% endif %}" id="id_content"
                       name="content" rows="4">{{ form.content.value|default:'' }}</textarea>
                   </label><br>
-                  <button type="submit">Vložit</button>
-                  <label>Diskuze jsou moderované - po odeslání komentář čeká na schválení.</label>
+                  <button type="submit">Vložit</button> Diskuze jsou moderované - po odeslání komentář čeká na schválení.
                 </form>
               </fieldset>{% endif %}
     {# {% block sidebar %} {% include 'blog/sidebar.html' %} {% endblock sidebar %} #}
