@@ -72,6 +72,12 @@ pre {
 pre code {
   font-size: 100%;
 }
+.varovani {
+  background:#FFF0CF;
+  border-radius: 0.5em;
+  border: 0.05em #FFD080 solid;
+  padding: 0.5em;
+}
 .clanek {
   border-radius: 0.5em;
   border: 0.05em #80D0FF solid;
