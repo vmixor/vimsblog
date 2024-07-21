@@ -173,7 +173,7 @@ pre code {
 /* Definice ramcu v CSS */
 @media only screen and (max-width: 999px) { /* Reseni divneho bugu v mobilnim Chrome */
   #okno {
-    width:1000px;
+    width:999px;
     margin:0; padding:0;
     text-align:left;
     border-radius: 0.5em;
