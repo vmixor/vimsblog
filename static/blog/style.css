@@ -171,12 +171,23 @@ pre code {
   justify-content: center;
 }
 /* Definice ramcu v CSS */
-#okno {
-  width:1064px;
-  margin:0; padding:0;
-  text-align:left;
-  border-radius: 0.5em;
-  /* border:1px #00A0FF solid; */
+@media only screen and (max-width: 999px) { /* Reseni divneho bugu v mobilnim Chrome */
+  #okno {
+    width:1000px;
+    margin:0; padding:0;
+    text-align:left;
+    border-radius: 0.5em;
+    /* border:1px #00A0FF solid; */
+  }
+}
+@media only screen and (min-width: 1000px) {
+  #okno {
+    width:1064px;
+    margin:0; padding:0;
+    text-align:left;
+    border-radius: 0.5em;
+    /* border:1px #00A0FF solid; */
+  }
 }
 #hlavicka {
   margin:0;
