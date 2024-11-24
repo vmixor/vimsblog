@@ -61,6 +61,9 @@ fieldset {
 .strankovani a:hover {
   text-decoration:underline;
 }
+code {
+  background:#F0F0F0;
+}
 pre {
   font-family: Consolas,"courier new";
   background:#CFF0FF;
@@ -71,11 +74,39 @@ pre {
 }
 pre code {
   font-size: 100%;
+  background:#CFF0FF;
+}
+kbd {
+  background-color: #eee;
+  border-radius: 3px;
+  border: 1px solid #b4b4b4;
+  box-shadow:
+    0 1px 1px rgba(0, 0, 0, 0.2),
+    0 2px 0 0 rgba(255, 255, 255, 0.7) inset;
+  color: #333;
+  display: inline-block;
+  font-size: 0.85em;
+  font-weight: 700;
+  line-height: 1;
+  padding: 2px 4px;
+  white-space: nowrap;
 }
 .varovani {
-  background:#FFF0CF;
+  background: #FFD0D0;
+  border-radius: 0.5em;
+  border: 0.05em #FFA0A0 solid;
+  padding: 0.5em;
+}
+.poznamka {
+  background: #FFF0CF;
   border-radius: 0.5em;
   border: 0.05em #FFD080 solid;
+  padding: 0.5em;
+}
+.info {
+  background: #CFFFF0;
+  border-radius: 0.5em;
+  border: 0.05em #80FFD0 solid;
   padding: 0.5em;
 }
 .clanek {
