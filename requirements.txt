@@ -2,5 +2,5 @@ Django>=4.1.3
 django-filebrowser-no-grappelli>=4.0.1
 django-mptt>=0.14.0
 django-simple-captcha>=0.5.17
-django-tinymce>=3.5.0
+django-tinymce==3.7.1
 psycopg2-binary>=2.9.5
