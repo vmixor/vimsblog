@@ -13,11 +13,19 @@ class PostList(generic.ListView):
     def get_queryset(self, **kwargs):
         qs = super().get_queryset(**kwargs)
         if 'hierarchy' in self.kwargs:
-            # filter Posts by category
-            slu = self.kwargs['hierarchy'].split('/')  # split category hierarchy url string into list
-            slug = slu[-1] if slu[-1] != '' else slu[-2]  # get last non-empty slug element
-            category = Category.objects.filter(slug=slug)[0]  # get first() element from list
-            return qs.filter(category=category, is_public=True, publish__lte=timezone.now()).order_by('-publish')
+            # Split the category hierarchy into parts
+            slu = self.kwargs['hierarchy'].split('/')
+            slug = slu[-1] if slu[-1] != '' else slu[-2]
+            # Load main category
+            category = get_object_or_404(Category, slug=slug)
+            # Load all subcategories
+            descendant_categories = category.get_descendants(include_self=True)
+            # Filter articles by category and its descendants
+            return qs.filter(
+                category__in=descendant_categories,
+                is_public=True,
+                publish__lte=timezone.now()
+            ).order_by('-publish')
         else:
             return qs.filter(is_public=True, publish__lte=timezone.now()).order_by('-publish')
 
